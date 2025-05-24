@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head><title>日本語要約</title></head>
+<body>
+  <h1>日本語要約アプリ</h1>
+  <form method="post">
+    <textarea name="text" rows="10" cols="60"></textarea><br>
+    <input type="submit" value="要約する">
+  </form>
+  {% if summary %}
+    <h2>要約結果:</h2>
+    <ul>
+      {% for sentence in summary %}
+        <li>{{ sentence }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,4 @@
+Flask
+janome
+sumy
+tinysegmenter
