@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    summary_result = ""
+    summary_result = []
     if request.method == "POST":
         text = request.form["text"]
 
@@ -20,7 +20,8 @@ def index():
         summarizer = LexRankSummarizer()
         summary = summarizer(parser.document, 2)
 
-        summary_result = "\n".join(["- " + str(sentence) for sentence in summary])
+        # ✅ リストとしてテンプレートに渡す
+        summary_result = [str(sentence) for sentence in summary]
 
     return render_template("index.html", summary=summary_result)
 
