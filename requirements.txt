@@ -1,4 +1,6 @@
 Flask
+gunicorn
 janome
 sumy
-tinysegmenter
+lxml
+numpy
